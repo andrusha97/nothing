@@ -42,7 +42,7 @@ main(int argc, char *argv[]) {
     unsigned int to_generate = 0;
 
     if (argc < 4) {
-        std::cerr << "Usage: " << argv[0] << " <text-file> <words-to-generate> <model-file>" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " <text-file> <number-of-words-to-generate> <model-file>" << std::endl;
         return 1;
     } else {
         input.open(argv[1]);

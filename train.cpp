@@ -13,7 +13,7 @@ main(int argc, char *argv[]) {
     unsigned int order = 0;
 
     if (argc < 4) {
-        std::cerr << "Usage: " << argv[0] << " <train-file> <chain-order> <output-file>" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " <training-file> <chain-order> <output-model-file>" << std::endl;
         return 1;
     } else {
         input.open(argv[1]);
