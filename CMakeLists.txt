@@ -1,0 +1,30 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(AI)
+
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+FIND_PACKAGE(Boost 1.56.0 REQUIRED COMPONENTS serialization)
+
+INCLUDE_DIRECTORIES(
+    SYSTEM ${Boost_INCLUDE_DIRS}
+)
+
+ADD_EXECUTABLE(train
+    train.cpp
+)
+
+ADD_EXECUTABLE(generate
+    generate.cpp
+)
+
+TARGET_LINK_LIBRARIES(train
+    ${Boost_LIBRARIES}
+)
+
+TARGET_LINK_LIBRARIES(generate
+    ${Boost_LIBRARIES}
+)
+
+SET_TARGET_PROPERTIES(train generate PROPERTIES
+    COMPILE_FLAGS "-std=c++0x -W -Wall -Werror -pedantic"
+)
